@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_21_160711) do
+ActiveRecord::Schema.define(version: 2022_04_21_180117) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
+    t.integer "points"
   end
 
   create_table "tasks", force: :cascade do |t|
