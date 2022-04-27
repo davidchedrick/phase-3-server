@@ -1,29 +1,29 @@
 class TasksController < ApplicationController
 
     get '/tasks' do
-        tasks = Tasks.all
-        tasks.to_json()
+        task = Task.all
+        task.to_json()
     end
 
     post '/tasks' do
-        tasks = Tasks.create(
+        task = Task.create(
             value: params[:value]
         )
-        tasks.to_json
+        task.to_json
     end
 
     patch '/tasks/:id' do
-        tasks = Tasks.find(params[:id])
-        tasks.update(
+        task = Task.find(params[:id])
+        task.update(
             value: params[:value]
         )
-        tasks.to_json
+        task.to_json
     end
 
     delete '/tasks/:id' do
-        tasks = Tasks.find(params[:id])
-        tasks.destroy
-        tasks.to_json
+        task = Task.find(params[:id])
+        task.destroy
+        task.to_json
     end
 
 end

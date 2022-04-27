@@ -1,29 +1,29 @@
 class ChildrenController < ApplicationController
-
+    set :default_content_type, 'application/json'
     get '/children' do
-        children = Children.all
+        children = Child.all
         children.to_json()
     end
 
     post '/children' do
-        children = Children.create(
+        child = Child.create(
             name: params[:name]
         )
-        children.to_json
+        child.to_json
     end
 
     patch '/children/:id' do
-        children = Children.find(params[:id])
-        children.update(
+        child = Child.find(params[:id])
+        child.update(
             name: params[:name]
         )
-        children.to_json
+        child.to_json
     end
 
     delete '/children/:id' do
-        children = Children.find(params[:id])
-        children.destroy
-        children.to_json
+        child = Child.find(params[:id])
+        child.destroy
+        child.to_json
     end
 
 end

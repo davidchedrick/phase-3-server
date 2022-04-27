@@ -1,29 +1,29 @@
 class UsersController < ApplicationController
 
     get '/users' do
-        users = Users.all
-        users.to_json
+        user = User.all
+        user.to_json
     end
 
     post '/users' do
-        users = Users.create(
+        user = User.create(
             username: params[:username]
         )
-        users.to_json
+        user.to_json
     end
 
     patch '/users/:id' do
-        users = Users.find(params[:id])
-        users.update(
+        user = User.find(params[:id])
+        user.update(
             username: params[:username]
         )
-        users.to_json
+        user.to_json
     end
 
     delete '/users/:id' do
-        users = Users.find(params[:id])
-        users.destroy
-        users.to_json
+        user = User.find(params[:id])
+        user.destroy
+        user.to_json
     end
 
 end
