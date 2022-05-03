@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_01_184504) do
+ActiveRecord::Schema.define(version: 2022_05_03_002139) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_05_01_184504) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password"
   end
 
 end
