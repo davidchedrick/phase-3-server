@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     # end
 
     
-    get '/users/:username' do
-        user = User.find_by(params[:username])
+    get '/users/:id' do
+        user = User.find(params[:id])
 
         user.to_json(
              
