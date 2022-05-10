@@ -5,6 +5,22 @@ class UsersController < ApplicationController
         user.to_json
     end
 
+    get '/users/:username/children' do
+        user = User.find_by(params[:username])
+        user.children
+        user.to_json
+    end
+
+    
+    get '/users/:username' do
+        user = User.find_by(params[:username])
+
+        user.to_json(
+             
+            include: :children
+        )
+    end
+
     post '/users' do
         user = User.create(
             username: params[:username]
