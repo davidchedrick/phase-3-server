@@ -22,9 +22,9 @@ class ChildrenController < ApplicationController
 
     patch '/children/:id/points' do
         child = Child.find(params[:id])
-        new_value = child.points + params[:points]
+       
         child.update(
-            points: new_value
+            points: params[:points]
         )
         child.to_json
     end
