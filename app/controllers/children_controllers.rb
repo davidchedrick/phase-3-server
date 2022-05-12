@@ -20,13 +20,14 @@ class ChildrenController < ApplicationController
     #     child.to_json
     # end
 
-    # patch '/children/:id' do
-    #     child = Child.find(params[:id])
-    #     child.update(
-    #         name: params[:name]
-    #     )
-    #     child.to_json
-    # end
+    patch '/children/:id/points' do
+        child = Child.find(params[:id])
+        new_value = child.points + params[:points]
+        child.update(
+            points: new_value
+        )
+        child.to_json
+    end
 
     # delete '/children/:id' do
     #     child = Child.find(params[:id])
