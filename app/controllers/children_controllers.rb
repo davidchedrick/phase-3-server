@@ -13,12 +13,14 @@ class ChildrenController < ApplicationController
         )
     end
 
-    # post '/children' do
-    #     child = Child.create(
-    #         name: params[:name]
-    #     )
-    #     child.to_json
-    # end
+    post '/children' do
+        child = Child.create(
+            name: params[:name],
+            points: params[:points],
+            user_id: params[:user_id]
+        )
+        child.to_json
+    end
 
     patch '/children/:id/points' do
         child = Child.find(params[:id])
