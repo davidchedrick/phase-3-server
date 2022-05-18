@@ -11,11 +11,22 @@ class TasksController < ApplicationController
         tasks.to_json()
     end
 
-    # post '/tasks' do
-    #     task = Task.create(
-    #         value: params[:value]
+    post '/tasks' do
+        task = Task.create(
+            body: params[:body],
+            value: params[:value],
+            child_id: params[:child_id]
+        )
+        task.to_json
+    end
+
+    # post '/children' do
+    #     child = Child.create(
+    #         name: params[:name],
+    #         points: params[:points],
+    #         user_id: params[:user_id]
     #     )
-    #     task.to_json
+    #     child.to_json
     # end
 
     # patch '/tasks/:id' do
