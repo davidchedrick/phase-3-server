@@ -31,10 +31,10 @@ class ChildrenController < ApplicationController
         child.to_json
     end
 
-    # delete '/children/:id' do
-    #     child = Child.find(params[:id])
-    #     child.destroy
-    #     child.to_json
-    # end
+    delete '/children/:id' do
+        child = Child.find(params[:id])
+        child.destroy
+        child.to_json
+    end
 
 end
