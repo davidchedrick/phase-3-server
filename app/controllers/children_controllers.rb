@@ -1,9 +1,5 @@
 class ChildrenController < ApplicationController
     set :default_content_type, 'application/json'
-    # get '/children' do
-    #     children = Child.all
-    #     children.to_json()
-    # end
 
     get '/children/:id' do
         children = Child.find(params[:id])
